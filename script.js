@@ -1,0 +1,25 @@
+let humanScore = 0;
+let computerScore = 0;
+let currentRoundNumber = 1;
+const generateTarget = () => {
+  const number = Math.floor(Math.random()*10);
+  return number;
+}
+const compareGuesses = (humanGuess, computerGuess, secterTargetNumber) => {
+  const humanGuessDiff = Math.abs(humanGuess, secterTargetNumber)
+  const computerGuessesDiff = Math.abs(computerGuess, secterTargetNumber)
+  if (humanGuessDiff <= computerGuessesDiff) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+const updateScore = gameWinner => {
+  if (gameWinner === 'human') {
+    humanScore++;
+  } else if (gameWinner === 'computer') {
+    computerScore++;
+  }
+}
+const advanceRound = () => currentRoundNumber++;
